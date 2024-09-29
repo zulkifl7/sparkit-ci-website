@@ -153,14 +153,21 @@ const scrolled = window.addEventListener("scroll", (e) => {
     if (window.scrollY > previousScrollPosition) {
         if (window.scrollY >= 80) {
             header.style.top = "-20px";
-
             const digitalSolutions = document.querySelector('.digital-solutions');
             const logo = document.querySelector('.logo');
             const logoImage = document.querySelector('.logo-image');
+            const headerBG = document.querySelector('.header-bg');
             logo.appendChild(digitalSolutions, logoImage);
             logo.classList.add('scrollup');
             // digitalSolutions.style.fontSize = "28px";
             digitalSolutions.classList.add('scrollup');
+            headerBG.classList.add('scrollup');
+            window.scrollTo({
+                top : 600,
+                left : 0,
+                behavior:"smooth",
+            });
+            previousScrollPosition = 600;
             
             
             
@@ -173,16 +180,25 @@ const scrolled = window.addEventListener("scroll", (e) => {
         }
         else {
             
-            if (window.scrollY <= 80) {
+            if (window.scrollY <= 580) {
                 const digitalSolutions = document.querySelector('.digital-solutions');
                 const agency = document.querySelector('.agency');
                 const content = document.querySelector('.content');
                 const logo = document.querySelector('.logo');
+                const headerBG = document.querySelector('.header-bg');
                 header.style.top = "0px";
                 content.insertBefore(digitalSolutions, agency);
                 logo.classList.remove('scrollup');
                 digitalSolutions.classList.remove('scrollup');
-        }
+                headerBG.classList.remove('scrollup');
+
+                window.scrollTo({
+                    top : 0,
+                    left : 0,
+                    behavior:"smooth",
+                });
+                previousScrollPosition = 0;
+            }
     }
     previousScrollPosition = window.scrollY;
 });
