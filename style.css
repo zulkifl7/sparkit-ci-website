@@ -10,9 +10,6 @@
 	color: #1a1a1a;
 	/* color: fireBrick; */
 }
-::-webkit-scrollbar {
-	display: none;
-}
 
 * {
 	cursor: none;
@@ -27,7 +24,7 @@ body {
 	width: 100vw;
 	min-height: 100vh;
 	overflow-x: hidden;
-	/* overflow: hidden; */
+	overflow: hidden;
 	display: flex;
 	align-items: center;
 	justify-content: center;
