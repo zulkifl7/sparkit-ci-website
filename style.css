@@ -21,7 +21,7 @@
 
 body {
 	background-color: #1a1a1a;
-	width: 100%;
+	width: 100vw;
 	min-height: 100vh;
 	overflow-x: hidden;
 	overflow: hidden;
@@ -69,7 +69,7 @@ body {
 /* * Background section */
 
 .blurbox {
-	width: 100%;
+	width: 100vw;
 	/* height: auto; */
 	height: 100vh;
 	background-color: #1a1a1a;
@@ -84,7 +84,7 @@ body {
 	position: absolute;
 	left: 0;
 	top: -20vh;
-	width: 1000vw;
+	width: 100vw;
 	/* background-color: #e63aa1; */
 	height: 120vh;
 	z-index: 1;
@@ -95,10 +95,10 @@ body {
 }
 
 .columns {
-	margin-left: 1vh;
+	margin-left: 0.6vw;
 	top: 10px;
 	/* position: absolute; */
-	width: 24vw;
+	width: 24.2vw;
 	height: 100%;
 	/* background-color: #23e123; */
 	/* display: flex; */
@@ -109,7 +109,7 @@ body {
 	background-color: #383838;
 	width: 100%;
 	height: 20vh;
-	margin-top: 1vh;
+	margin-top: 0.6vw;
 	backdrop-filter: blur(100px);
 	border-radius: 4px;
 	transition: all 1s;
@@ -155,7 +155,7 @@ img {
 	top: 0;
 	height: 20vh;
 	left: 0;
-	width: 100%;
+	width: 100vw;
 	padding: 20px 100px;
 	/* background: rgba(255, 255, 255, 0); */
 	display: flex;
@@ -325,6 +325,7 @@ img {
 	}
 	.header {
 		z-index: 5;
+		padding: 20px 0px;
 	}
 	.navbar {
 		position: fixed;
