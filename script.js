@@ -145,3 +145,44 @@ navEliments.forEach((eliment , index) => {
         // console.log("mouse Out " + eliment.textContent);
     });
 });
+
+// scroll animation to services 
+let previousScrollPosition = window.scrollY;
+const scrolled = window.addEventListener("scroll", (e) => {
+    console.log(window.scrollY);
+    if (window.scrollY > previousScrollPosition) {
+        if (window.scrollY >= 80) {
+            header.style.top = "-20px";
+
+            const digitalSolutions = document.querySelector('.digital-solutions');
+            const logo = document.querySelector('.logo');
+            const logoImage = document.querySelector('.logo-image');
+            logo.appendChild(digitalSolutions, logoImage);
+            logo.classList.add('scrollup');
+            
+            
+            
+            // digitalSolutions.classList.add('scrollup');
+        }
+        // if (window.scrollY >= 160) {
+            //     header.style.top = "-40px";
+            
+            // }
+            
+        }
+        else {
+            
+            if (window.scrollY <= 80) {
+                const digitalSolutions = document.querySelector('.digital-solutions');
+                const agency = document.querySelector('.agency');
+                const content = document.querySelector('.content');
+                const logo = document.querySelector('.logo');
+                header.style.top = "0px";
+                content.insertBefore(digitalSolutions, agency);
+                logo.classList.add('scrollup');
+                // digitalSolutions.classList.remove('scrollup');
+        }
+    }
+    previousScrollPosition = window.scrollY;
+});
+

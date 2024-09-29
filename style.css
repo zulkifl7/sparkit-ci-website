@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap");
 
+html {
+	scroll-behavior: smooth;
+}
+
 ::selection {
 	background-color: #fff;
 	color: #1a1a1a;
@@ -85,7 +89,7 @@ body {
 }
 
 .animated-boxes {
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: -20vh;
 	width: 100vw;
@@ -170,7 +174,13 @@ img {
 	z-index: 3;
 	/* background: #1a1a1a; */
 	/* z-index: ; */
+	transition: all 0.5s;
 }
+.header.scrollup {
+	padding: 0px 100px;
+	background: #1a1a1a;
+}
+
 /* .header::after {
 	content: "";
 	position: absolute;
@@ -201,6 +211,18 @@ img {
 
 .header:hover::before {
 	left: 100%;
+}
+
+.logo {
+	transition: all ease 1s;
+}
+
+.logo.scrollup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: #fff;
 }
 
 .header .logo img {
@@ -236,12 +258,22 @@ img {
 }
 
 .content h3 {
+	/* position: fixed; */
 	z-index: 3;
 	font-size: 128px;
 	font-weight: 400;
 	margin-bottom: 20px;
 	color: #ffffff;
 	font-family: "Habibi", sans-serif;
+	transition: all ease 0.8s;
+}
+
+.content h3.scrollup {
+	font-size: 22px;
+	font-weight: 500;
+	position: fixed;
+	left: 220px;
+	top: 32px;
 }
 
 .content h1 {
