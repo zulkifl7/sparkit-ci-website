@@ -7,7 +7,7 @@ const tiles = document.querySelectorAll('.row');
 function tileSize() {
     tiles.forEach((tile) => {
         tile.style.height = heights[Math.floor(Math.random() * 5)];
-        console.log(heights[Math.floor(Math.random() * 5)]);
+        // console.log(heights[Math.floor(Math.random() * 5)]);
     })
 }
 tileSize();
@@ -54,9 +54,6 @@ cursor_circules.forEach(function (curcle) {
 //     cordinates.x = e.clientX;
 //     cordinates.y = e.clientY + window.scrollY;
 // });
-
-
-
 
 document.addEventListener("mousemove", function(e) {
     cordinates.x = e.clientX + window.scrollX;
@@ -108,14 +105,14 @@ menuIcon.addEventListener('click', () => {
 // * menu button transition
 
 menuIcon.addEventListener("mouseover", (e) => {
-    console.log("Hover nav");
+    // console.log("Hover nav");
     menuIcon.style.color = "#1a1a1a";
     menuIcon.style.backgroundColor = "#fff";
 });
 
 menuIcon.addEventListener("mouseout", (e) => {
     if (clickCount % 2 == 0) {}
-    console.log("out nav");
+    // console.log("out nav");
     menuIcon.style.color = "#fff";
     menuIcon.style.backgroundColor = "#1a1a1a";
 });
@@ -125,7 +122,7 @@ menuIcon.addEventListener("mouseout", (e) => {
 const navEliments = document.querySelectorAll(".nav-eliment");
 
 navbar.addEventListener("mouseover", (e)  => {
-    console.log("Hovered nav bar");
+    // console.log("Hovered nav bar");
     top_circle.style.scale = 5;
     cursor_circules.forEach(function(circle) {
         circle.style.display = "none";
@@ -137,7 +134,7 @@ navbar.addEventListener("mouseout", (e)  => {
         circle.style.display = "block";
         
     });
-    console.log("mouse Out nab var");
+    // console.log("mouse Out nab var");
 })
 navEliments.forEach((eliment , index) => {
     eliment.addEventListener("mouseover", (e)  => {
@@ -145,6 +142,6 @@ navEliments.forEach((eliment , index) => {
     });
     eliment.addEventListener("mouseout", (e)  => {
         eliment.style.fontSize = "18px";
-        console.log("mouse Out " + eliment.textContent);
+        // console.log("mouse Out " + eliment.textContent);
     });
 });
