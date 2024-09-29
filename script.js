@@ -159,10 +159,11 @@ const scrolled = window.addEventListener("scroll", (e) => {
             const logoImage = document.querySelector('.logo-image');
             logo.appendChild(digitalSolutions, logoImage);
             logo.classList.add('scrollup');
+            // digitalSolutions.style.fontSize = "28px";
+            digitalSolutions.classList.add('scrollup');
             
             
             
-            // digitalSolutions.classList.add('scrollup');
         }
         // if (window.scrollY >= 160) {
             //     header.style.top = "-40px";
@@ -179,8 +180,8 @@ const scrolled = window.addEventListener("scroll", (e) => {
                 const logo = document.querySelector('.logo');
                 header.style.top = "0px";
                 content.insertBefore(digitalSolutions, agency);
-                logo.classList.add('scrollup');
-                // digitalSolutions.classList.remove('scrollup');
+                logo.classList.remove('scrollup');
+                digitalSolutions.classList.remove('scrollup');
         }
     }
     previousScrollPosition = window.scrollY;
