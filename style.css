@@ -11,6 +11,10 @@
 	/* color: fireBrick; */
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 * {
 	cursor: none;
 	margin: 0;
@@ -24,7 +28,7 @@ body {
 	width: 100vw;
 	min-height: 100vh;
 	overflow-x: hidden;
-	overflow: hidden;
+	/* overflow: hidden; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
