@@ -39,7 +39,7 @@ setInterval(() => {
 
 // * Cursor setup
 
-const cordinates = { x:0 , y:0 };
+const cordinates = { x:100 , y:100 };
 const cursor_circules = document.querySelectorAll(".cursor");
 const top_circle = document.querySelector(".cursor_");
 
@@ -59,6 +59,9 @@ document.addEventListener("mousemove", function(e) {
     cordinates.x = e.clientX + window.scrollX;
     cordinates.y = e.clientY + window.scrollY;
 });
+
+
+
 
 function animatecursor() {
     let x = cordinates.x;
@@ -146,11 +149,18 @@ navEliments.forEach((eliment , index) => {
     });
 });
 
+
+
 // scroll animation to services 
-let previousScrollPosition = window.scrollY;
+const scrollPosition = 0;
+document.addEventListener("scrollY", function(e) {
+    const scrollPosition = window.scrollY;
+});
+
+let previousScrollPosition = 0;
 const scrolled = window.addEventListener("scroll", (e) => {
     console.log(window.scrollY);
-    if (window.scrollY > previousScrollPosition) {
+    if (scrollPosition > previousScrollPosition) {
         if (window.scrollY >= 80) {
             header.style.top = "-20px";
             const digitalSolutions = document.querySelector('.digital-solutions');
@@ -168,9 +178,6 @@ const scrolled = window.addEventListener("scroll", (e) => {
                 behavior:"smooth",
             });
             previousScrollPosition = 600;
-            
-            
-            
         }
         // if (window.scrollY >= 160) {
             //     header.style.top = "-40px";
@@ -178,9 +185,9 @@ const scrolled = window.addEventListener("scroll", (e) => {
             // }
             
         }
-        else {
+        else if (previousScrollPosition > scrollPosition) {
             
-            if (window.scrollY <= 580) {
+            if (scrollPosition <= 580) {
                 const digitalSolutions = document.querySelector('.digital-solutions');
                 const agency = document.querySelector('.agency');
                 const content = document.querySelector('.content');
@@ -191,6 +198,7 @@ const scrolled = window.addEventListener("scroll", (e) => {
                 logo.classList.remove('scrollup');
                 digitalSolutions.classList.remove('scrollup');
                 headerBG.classList.remove('scrollup');
+
 
                 window.scrollTo({
                     top : 0,
