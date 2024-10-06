@@ -40,6 +40,8 @@ setInterval(() => {
 // * Cursor setup
 
 const cordinates = { x:100 , y:100 };
+const tempCordinates = { x:100 , y:100 };
+const scrolls = { x:100 , y:100 };
 const cursor_circules = document.querySelectorAll(".cursor");
 const top_circle = document.querySelector(".cursor_");
 
@@ -55,9 +57,28 @@ cursor_circules.forEach(function (curcle) {
 //     cordinates.y = e.clientY + window.scrollY;
 // });
 
+
+document.addEventListener("scroll", (e) => {
+    scrolls.x = window.scrollX;
+    scrolls.y = window.scrollY;
+
+    cordinates.x = tempCordinates.x + window.scrollX;
+    cordinates.y = tempCordinates.y + window.scrollY;
+
+    // console.log("x cordinates"+cordinates.x);
+    // console.log("y cordinates"+cordinates.y);
+})
+
 document.addEventListener("mousemove", function(e) {
     cordinates.x = e.clientX + window.scrollX;
+    tempCordinates.x = e.clientX + window.scrollX;
     cordinates.y = e.clientY + window.scrollY;
+    tempCordinates.y = e.clientY + window.scrollY;
+    // console.log("X xordinate - " + cordinates.x);
+    // console.log("Y xordinate - " + cordinates.y);
+    // console.log("client Y - " + e.clientY);
+    // console.log("scroll Y - " + window.scrollY);
+    // console.log("------------");
 });
 
 
@@ -161,23 +182,23 @@ let previousScrollPosition = 0;
 const scrolled = window.addEventListener("scroll", (e) => {
     console.log(window.scrollY);
     if (scrollPosition > previousScrollPosition) {
-        if (window.scrollY >= 80) {
-            header.style.top = "-20px";
-            const digitalSolutions = document.querySelector('.digital-solutions');
-            const logo = document.querySelector('.logo');
-            const logoImage = document.querySelector('.logo-image');
-            const headerBG = document.querySelector('.header-bg');
-            logo.appendChild(digitalSolutions, logoImage);
-            logo.classList.add('scrollup');
-            // digitalSolutions.style.fontSize = "28px";
-            digitalSolutions.classList.add('scrollup');
-            headerBG.classList.add('scrollup');
-            window.scrollTo({
-                top : 600,
-                left : 0,
-                behavior:"smooth",
-            });
-            previousScrollPosition = 600;
+        if (window.scrollY >= 80) { 
+            // header.style.top = "-20px";
+            // const digitalSolutions = document.querySelector('.digital-solutions');
+            // const logo = document.querySelector('.logo');
+            // const logoImage = document.querySelector('.logo-image');
+            // const headerBG = document.querySelector('.header-bg');
+            // logo.appendChild(digitalSolutions, logoImage);
+            // logo.classList.add('scrollup');
+            // // digitalSolutions.style.fontSize = "28px";
+            // digitalSolutions.classList.add('scrollup');
+            // headerBG.classList.add('scrollup');
+            // window.scrollTo({
+            //     top : 600,
+            //     left : 0,
+            //     behavior:"smooth",
+            // });
+            // previousScrollPosition = 600;
         }
         // if (window.scrollY >= 160) {
             //     header.style.top = "-40px";
@@ -188,24 +209,24 @@ const scrolled = window.addEventListener("scroll", (e) => {
         else if (previousScrollPosition > scrollPosition) {
             
             if (scrollPosition <= 580) {
-                const digitalSolutions = document.querySelector('.digital-solutions');
-                const agency = document.querySelector('.agency');
-                const content = document.querySelector('.content');
-                const logo = document.querySelector('.logo');
-                const headerBG = document.querySelector('.header-bg');
-                header.style.top = "0px";
-                content.insertBefore(digitalSolutions, agency);
-                logo.classList.remove('scrollup');
-                digitalSolutions.classList.remove('scrollup');
-                headerBG.classList.remove('scrollup');
+                // const digitalSolutions = document.querySelector('.digital-solutions');
+                // const agency = document.querySelector('.agency');
+                // const content = document.querySelector('.content');
+                // const logo = document.querySelector('.logo');
+                // const headerBG = document.querySelector('.header-bg');
+                // header.style.top = "0px";
+                // content.insertBefore(digitalSolutions, agency);
+                // logo.classList.remove('scrollup');
+                // digitalSolutions.classList.remove('scrollup');
+                // headerBG.classList.remove('scrollup');
 
 
-                window.scrollTo({
-                    top : 0,
-                    left : 0,
-                    behavior:"smooth",
-                });
-                previousScrollPosition = 0;
+                // window.scrollTo({
+                //     top : 0,
+                //     left : 0,
+                //     behavior:"smooth",
+                // });
+                // previousScrollPosition = 0;
             }
     }
     previousScrollPosition = window.scrollY;
